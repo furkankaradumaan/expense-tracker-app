@@ -4,10 +4,7 @@
 #include <string>
 #include <iostream>
 
-/**
- * Enumeration for Transaction types.
- * Helps distinguish between Income and Expense without separate classes.
- */
+// Enum for INCOME and EXPENSE
 enum TransactionType { INCOME, EXPENSE };
 
 class Transaction {
@@ -28,10 +25,7 @@ public:
     std::string getCategory() const;
     TransactionType getType() const;
 
-    /**
-     * Operator Overloading for display.
-     * Allows: std::cout << transaction_object;
-     */
+    // Overloading stream insertion operator to display object data
     friend std::ostream& operator<<(std::ostream& os, const Transaction& t);
     
     // Serializes object data into a comma-separated string for file storage
